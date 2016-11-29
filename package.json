@@ -1,0 +1,29 @@
+{
+  "private": true,
+  "scripts": {
+    "js_build": "browserify -t mithrilify src/js/app/index.js --debug -o dist/app.js",
+    "js_build:watch": "npm run js_build & n-run -w 'src/js/app/*' 'npm run js_build'",
+    "static_files": "n-copy --source src --destination dist --ignore '*.js' '*'",
+    "static_files:watch": "npm run static_files & n-run -w src 'npm run static_files'",
+    "dist_clean": "n-clean dist/*",
+    "ui_server": "node tools/ui-server/ui-server.js",
+    "dev": "npm run dist_clean && npm run ui_server & npm run js_build:watch & npm run static_files:watch",
+    "start": "npm run dev",
+    "test": ""
+  },
+  "devDependencies": {
+    "browserify": "^13.1.0",
+    "mithrilify": "0.0.6",
+    "npm-build-tools": "^2.2.5"
+  },
+  "dependencies": {
+    "fastclick": "^1.0.6",
+    "j2c": "^0.11.2",
+    "mithril": "^0.2.5",
+    "mobx": "^2.6.2",
+    "todomvc-app-css": "^2.0.0",
+    "todomvc-common": "^1.0.0",
+    "underscore": "^1.8.3",
+    "velocity-animate": "^1.3.1"
+  }
+}

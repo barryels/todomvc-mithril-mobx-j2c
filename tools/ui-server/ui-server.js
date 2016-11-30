@@ -1,11 +1,12 @@
 'use strict';
 
 
+var port = 8400;
 var fs = require('fs');
 var path = require('path');
 var http = require('http');
-
 var staticBasePath = './dist';
+
 
 var staticServe = function (req, res) {
 	var fileLoc = path.resolve(staticBasePath);
@@ -26,4 +27,4 @@ var staticServe = function (req, res) {
 };
 
 
-http.createServer(staticServe).listen(8400);
+http.createServer(staticServe).listen(port);

@@ -2,12 +2,12 @@
   "private": true,
   "scripts": {
     "js_build": "browserify -t mithrilify src/js/app/index.js --debug -o dist/app.js",
-    "js_build:watch": "npm run js_build & n-run -w 'src/js/app/*' 'npm run js_build'",
-    "static_files": "n-copy --source src --destination dist --ignore '*.js' '*'",
-    "static_files:watch": "npm run static_files & n-run -w src 'npm run static_files'",
-    "dist_clean": "n-clean dist/*",
+    "js_build:watch": "npm run js_build & n-run -w \"src/js/app/*\" \"npm run js_build\"",
+    "static_files": "n-copy --source src --destination dist --ignore \"*.js\" \"*\"",
+    "static_files:watch": "npm run static_files & n-run -w src \"npm run static_files\"",
+    "dist_clean": "n-clean \"dist/*\"",
     "ui_server": "node tools/ui-server/ui-server.js",
-    "dev": "npm run dist_clean && npm run ui_server & npm run js_build:watch & npm run static_files:watch",
+    "dev": "n-run \"npm run dist_clean\" \"npm run ui_server\" \"npm run js_build:watch\" \"npm run static_files:watch\"",
     "start": "npm run dev",
     "test": ""
   },

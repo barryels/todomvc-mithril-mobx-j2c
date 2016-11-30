@@ -8,7 +8,7 @@ var m = require('mithril');
 
 // var theme = require('./core/theme/theme');
 var Utils = require('./modules/Core/components/Utils/Utils');
-var Gateway = require('./modules/Core/components/Gateway/Gateway');
+var Gateway = require('./modules/Core/components/APIGateway/APIGateway');
 var store = require('./store');
 
 

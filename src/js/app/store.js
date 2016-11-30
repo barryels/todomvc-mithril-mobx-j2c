@@ -9,7 +9,7 @@ mobx.useStrict(true);
 
 
 var Utils = require('./modules/Core/components/Utils/Utils');
-var Gateway = require('./modules/Core/components/Gateway/Gateway');
+var Gateway = require('./modules/Core/components/APIGateway/APIGateway');
 var storeAsJS;
 var state;
 var actions;
